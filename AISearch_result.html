@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>AI圖片搜索結果</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 這隻是網站上原有的CSS reset 不用載入 -->
+    <link
+      rel="stylesheet"
+      href="https://tw.taiwantrade.com/etc.clientlibs/aem-homepage/clientlibs/clientlib-angular/resources/assets/base_all.css?v=c9427398"
+    />
+    <!-- style裡都是原有的CSS 不用載入 -->
+    <style>
+      .photo_search_recommand_area {
+        background-color: #ffffff;
+      }
+      .component_layout {
+        max-width: 1472px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        padding-left: 36px;
+        padding-right: 36px;
+        margin: auto;
+      }
+      .photo_search_recommand_area .component_layout {
+        padding: 20px 24px;
+      }
+      .photo_search_recommand_card {
+        width: 100%;
+        background-color: #f2f2f2;
+        font-size: 14px;
+        border-radius: 16px;
+        padding: 16px 42px 16px 16px;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .photo_search_recommand_card .close_btn {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+      }
+      .photo_search_recommand_card .photo_search_img {
+        height: 70px;
+        margin-right: 16px;
+        max-width: 50%;
+        flex-shrink: 0;
+      }
+      .photo_search_recommand_card .photo_search_img img {
+        max-height: 100%;
+        width: auto;
+        max-width: 100%;
+      }
+    </style>
+    <!-- 這是屬於這個元件的CSS -->
+    <link rel="stylesheet" href="css/AISearch_result.css" />
+  </head>
+  <body>
+    <!-- 原始html -->
+    <!-- <div class="photo_search_recommand_area">
+      <div class="component_layout">
+        <div class="photo_search_recommand_card">
+          <div class="close_btn"><i class="icon-close"></i></div>
+          <div class="photo_search_img">
+            <img
+              src="https://im01.itaiwantrade.com/imgSearch/4e3de906-3db6-4669-b9da-f615fc495b1e/demo.jpg"
+            />
+          </div>
+          <div class="photo_search_txt">
+            <div class="photo_search_txt_line">
+              <span>Keywords: </span><a class="photo_search_link">Technology</a
+              ><a class="photo_search_link">Security</a
+              ><a class="photo_search_link">Robot</a>
+            </div>
+            <hr />
+            <div class="photo_search_txt_line">
+              <span>Make a </span
+              ><span class="button_area"
+                ><a
+                  class="btn_primary"
+                  href="https://tw.taiwantrade.com/business/TradeInquiry?suggestion=Technology,Security,Robot&amp;imgUrl=https://im01.itaiwantrade.com/imgSearch/4e3de906-3db6-4669-b9da-f615fc495b1e/demo.jpg"
+                  >填寫採購需求
+                </a></span
+              ><span>with this photo for a recommended suppliers list.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 以下是相似的產品搜尋結果，點擊圖片可進一步裁切搜尋。 icon在後 無關閉鈕-->
+    <!-- AISearch_result_area -->
+    <div class="AISearch_result_area">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <!-- 右邊圖片 -->
+          <div class="AISearch_result_pic">
+            <!-- 裁切遮罩 -->
+            <div class="picOverlay">
+              <span class="icon-crop"></span>裁剪圖像
+            </div>
+            <img src="img/demo.jpg" alt="" />
+          </div>
+          <!-- 左邊文字 -->
+          <div class="AISearch_result_list">
+            <div class="listText">
+              以下是相似的產品搜尋結果，點擊圖片可進一步裁切搜尋。
+              <span class="icon_AI"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI努力分析圖片中…icon在前 有關閉鈕 桌機版 -->
+    <!-- AISearch_result_area -->
+    <div class="AISearch_result_area">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <div class="close_btn"><i class="icon-close"></i></div>
+          <!-- 右邊圖片 -->
+          <div class="AISearch_result_pic">
+            <!-- 裁切遮罩 -->
+            <div class="picOverlay">
+              <span class="icon-crop"></span>裁剪圖像
+            </div>
+            <img src="img/demo.jpg" alt="" />
+          </div>
+          <!-- 左邊文字與圖片列表 -->
+          <div class="AISearch_result_list">
+            <div class="listText">
+              <span class="icon_AI"></span>AI努力分析圖片中…
+            </div>
+            <!-- 圖片列表 -->
+            <div class="listPic">
+              <ul>
+                <li>
+                  <span>原圖</span>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI努力分析圖片中…icon在前 手機版 -->
+    <!-- AISearch_result_area  -->
+    <div class="AISearch_result_area mobile">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <!-- 手機圖片列表 -->
+          <div class="AISearch_result_mobile">
+            <ul>
+              <li>
+                <img src="img/demo.jpg" alt="" />
+              </li>
+              <li>
+                <a href="" class="addPic"></a>
+              </li>
+            </ul>
+          </div>
+          <!-- 提示文字 -->
+          <div class="listText">
+            <span class="icon_AI"></span>AI努力分析圖片中…
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 以下是相似的產品搜尋結果，可切換圖片進行指定搜索。 icon在後 無關閉鈕 桌機版 -->
+    <!-- AISearch_result_area -->
+    <div class="AISearch_result_area">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <!-- 右邊圖片 -->
+          <div class="AISearch_result_pic">
+            <!-- 裁切遮罩 -->
+            <div class="picOverlay">
+              <span class="icon-crop"></span>裁剪圖像
+            </div>
+            <img src="img/demo.jpg" alt="" />
+          </div>
+          <!-- 左邊文字與圖片列表 -->
+          <div class="AISearch_result_list">
+            <div class="listText">
+              以下是相似的產品搜尋結果，可切換圖片進行指定搜索。<span
+                class="icon_AI"
+              ></span>
+            </div>
+            <!-- 圖片列表 -->
+            <div class="listPic">
+              <ul>
+                <li class="active">
+                  <span>原圖</span>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 以下是相似的產品搜尋結果 icon在後 手機版 -->
+    <!-- AISearch_result_area  -->
+    <div class="AISearch_result_area mobile">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <!-- 手機圖片列表 -->
+          <div class="AISearch_result_mobile">
+            <ul>
+              <li>
+                <img src="img/demo.jpg" alt="" />
+              </li>
+              <li>
+                <a href="" class="addPic"></a>
+              </li>
+            </ul>
+          </div>
+          <!-- 提示文字 -->
+          <div class="listText">
+            以下是相似的產品搜尋結果<span class="icon_AI"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 唉呀，出了點問題！請稍後再試，或改用關鍵字搜尋。 icon在前 有關閉鈕 -->
+    <!-- AISearch_result_area -->
+    <div class="AISearch_result_area">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <div class="close_btn"><i class="icon-close"></i></div>
+          <!-- 右邊圖片 -->
+          <div class="AISearch_result_pic">
+            <!-- 裁切遮罩 -->
+            <div class="picOverlay">
+              <span class="icon-crop"></span>裁剪圖像
+            </div>
+            <img src="img/demo.jpg" alt="" />
+          </div>
+          <!-- 左邊文字與圖片列表 -->
+          <div class="AISearch_result_list">
+            <div class="listText">
+              <span class="icon_AI"></span
+              >唉呀，出了點問題！請稍後再試，或改用關鍵字搜尋。
+            </div>
+            <!-- 圖片列表 -->
+            <div class="listPic">
+              <ul>
+                <li>
+                  <span>原圖</span>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li class="active">
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+                <li>
+                  <img src="img/demo.jpg" alt="" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 沒有找到相似的產品呢！試試換張圖片？ icon在前 有關閉鈕 -->
+    <!-- AISearch_result_area -->
+    <div class="AISearch_result_area">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <div class="close_btn"><i class="icon-close"></i></div>
+          <!-- 右邊圖片 -->
+          <div class="AISearch_result_pic">
+            <!-- 裁切遮罩 -->
+            <div class="picOverlay">
+              <span class="icon-crop"></span>裁剪圖像
+            </div>
+            <img src="img/demo.jpg" alt="" />
+          </div>
+          <!-- 左邊文字與圖片列表 -->
+          <div class="AISearch_result_list">
+            <div class="listText">
+              <span class="icon_AI"></span>沒有找到相似的產品呢！試試<a
+                href=""
+                class="changePic"
+                >換張圖片</a
+              >？
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 沒有找到相似的產品呢！試試換張圖片？ 手機版 -->
+    <!-- AISearch_result_area  -->
+    <div class="AISearch_result_area mobile">
+      <div class="component_layout">
+        <div class="AISearch_result">
+          <!-- 手機圖片列表 -->
+          <div class="AISearch_result_mobile">
+            <ul>
+              <li>
+                <img src="img/demo.jpg" alt="" />
+              </li>
+              <li>
+                <a href="" class="addPic"></a>
+              </li>
+            </ul>
+          </div>
+          <!-- 提示文字 -->
+          <div class="listText">
+            <span class="icon_AI"></span>沒有找到相似的產品呢！試試換張圖片？
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const listPicContainers = document.querySelectorAll(".listPic");
+      listPicContainers.forEach((container) => {
+        const ul = container.querySelector("ul");
+        ul.addEventListener("click", (event) => {
+          const targetLi = event.target.closest("li");
+          if (targetLi) {
+            const isActive = targetLi.classList.contains("active");
+            const listItems = container.querySelectorAll("ul li");
+            listItems.forEach((li) => {
+              li.classList.remove("active");
+            });
+            if (!isActive) {
+              targetLi.classList.add("active");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
