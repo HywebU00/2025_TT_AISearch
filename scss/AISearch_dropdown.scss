@@ -197,25 +197,23 @@
           background: #eff0ef;
         }
         .uploadStatus {
+          .statusTxt {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            &.warning {
+              color: #ff0000;
+              span.icon_warning {
+                width: 24px;
+                height: 24px;
+                display: block;
+                background: url(../img/icon_warning.svg) no-repeat center center;
+                margin-right: 8px;
+              }
+            }
+          }
           .progressBar {
             background: #dedede;
-          }
-        }
-        .alertTxt {
-          display: flex;
-          justify-content: center;
-          color: #ff0000;
-          flex-wrap: wrap;
-          span.icon_warning {
-            width: 24px;
-            height: 24px;
-            display: block;
-            background: url(../img/icon_warning.svg) no-repeat center center;
-            margin-right: 8px;
-          }
-          a.redo {
-            color: #ff0000;
-            text-decoration: underline;
           }
         }
       }

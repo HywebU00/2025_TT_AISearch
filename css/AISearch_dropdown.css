@@ -259,30 +259,28 @@
     aspect-ratio: 1/1;
     background: #eff0ef;
   }
-  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .uploadStatus .progressBar {
-    background: #dedede;
-  }
-  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .alertTxt {
+  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .uploadStatus .statusTxt {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    color: #ff0000;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .alertTxt span.icon_warning {
+  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .uploadStatus .statusTxt.warning {
+    color: #ff0000;
+  }
+  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .uploadStatus .statusTxt.warning span.icon_warning {
     width: 24px;
     height: 24px;
     display: block;
     background: url(../img/icon_warning.svg) no-repeat center center;
     margin-right: 8px;
   }
-  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .alertTxt a.redo {
-    color: #ff0000;
-    text-decoration: underline;
+  .AISearch_dropdown.mobile .AISearch_dropdown_uploading .uploadStatus .progressBar {
+    background: #dedede;
   }
   .AISearch_dropdown.mobile .AISearch_dropdown_input {
     -webkit-box-pack: center;
