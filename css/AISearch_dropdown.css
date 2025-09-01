@@ -98,6 +98,10 @@
   margin-right: 1px;
   color: #7f630b;
   text-decoration: underline;
+  cursor: pointer;
+}
+.AISearch_dropdown .AISearch_dropdown_upload .uploadTxt ul li label:hover {
+  text-decoration: none;
 }
 .AISearch_dropdown .AISearch_dropdown_upload .uploadTxt ul li kbd {
   background: #fff;
@@ -164,10 +168,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 .AISearch_dropdown .AISearch_dropdown_uploading .uploadPic img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .AISearch_dropdown .AISearch_dropdown_uploading .uploadStatus {
   text-align: center;
@@ -237,6 +244,9 @@
   background: #d4d4d4;
   border-radius: 4px;
 }
+.AISearch_dropdown .AISearch_dropdown_input .AISaerchBtn:hover, .AISearch_dropdown .AISearch_dropdown_input .AISaerchBtn:active {
+  background: #fabe0f;
+}
 .AISearch_dropdown.mobile {
   display: none;
 }
@@ -295,5 +305,8 @@
         -ms-flex: 0 0 152px;
             flex: 0 0 152px;
     line-height: 48px;
+  }
+  .AISearch_dropdown.mobile .AISearch_dropdown_input .AISaerchBtn:hover, .AISearch_dropdown.mobile .AISearch_dropdown_input .AISaerchBtn:active {
+    background: #fabe0f;
   }
 }/*# sourceMappingURL=AISearch_dropdown.css.map */

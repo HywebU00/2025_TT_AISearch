@@ -141,7 +141,7 @@
                   background: rgba($color: #000000, $alpha: 0.8);
                   color: #fff;
                   font-size: 14px;
-                  z-index: 8;
+                  z-index: 4;
                   text-align: center;
                   display: flex;
                   align-items: center;
@@ -163,7 +163,7 @@
                   height: 100%;
                   box-shadow: 0 0 0 2px #ccc inset;
                   border-radius: 6px;
-                  z-index: 9;
+                  z-index: 5;
                 }
               }
               &.active {
@@ -176,7 +176,7 @@
                   height: 100%;
                   box-shadow: 0 0 0 2px #fdb90e inset;
                   border-radius: 6px;
-                  z-index: 9;
+                  z-index: 5;
                 }
                 &:hover {
                   box-shadow: 0 0 0 2px #fdb90e inset;

@@ -68,6 +68,10 @@
             margin-right: 1px;
             color: #7f630b;
             text-decoration: underline;
+            cursor: pointer;
+            &:hover {
+              text-decoration: none;
+            }
           }
           kbd {
             background: #fff;
@@ -118,8 +122,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
       img {
-        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
     .uploadStatus {
@@ -178,6 +185,10 @@
       color: #000;
       background: #d4d4d4;
       border-radius: 4px;
+      &:hover,
+      &:active {
+        background: #fabe0f;
+      }
     }
   }
   &.mobile {
@@ -225,6 +236,10 @@
           width: 152px;
           flex: 0 0 152px;
           line-height: 48px;
+          &:hover,
+          &:active {
+            background: #fabe0f;
+          }
         }
       }
     }

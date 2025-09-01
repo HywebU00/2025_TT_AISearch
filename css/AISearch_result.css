@@ -195,7 +195,7 @@
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 14px;
-  z-index: 8;
+  z-index: 4;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,7 +223,7 @@
   -webkit-box-shadow: 0 0 0 2px #ccc inset;
           box-shadow: 0 0 0 2px #ccc inset;
   border-radius: 6px;
-  z-index: 9;
+  z-index: 5;
 }
 .AISearch_result_area .component_layout .AISearch_result .AISearch_result_list .listPic ul li.active::before {
   content: "";
@@ -235,7 +235,7 @@
   -webkit-box-shadow: 0 0 0 2px #fdb90e inset;
           box-shadow: 0 0 0 2px #fdb90e inset;
   border-radius: 6px;
-  z-index: 9;
+  z-index: 5;
 }
 .AISearch_result_area .component_layout .AISearch_result .AISearch_result_list .listPic ul li.active:hover {
   -webkit-box-shadow: 0 0 0 2px #fdb90e inset;
